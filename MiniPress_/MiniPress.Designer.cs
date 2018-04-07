@@ -46,8 +46,7 @@
             this.webtitle = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.Light = new MetroFramework.Controls.MetroButton();
-            this.Dark = new MetroFramework.Controls.MetroButton();
+            this.ThemeBtn = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +70,6 @@
             this.Profile_Picture_Label.Style = MetroFramework.MetroColorStyle.Blue;
             this.Profile_Picture_Label.TabIndex = 1;
             this.Profile_Picture_Label.Text = "Profile Picture:";
-            this.Profile_Picture_Label.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // metroLabel3
             // 
@@ -365,25 +363,14 @@
             this.metroStyleManager1.Owner = this;
             this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // Light
+            // ThemeBtn
             // 
-            this.Light.Location = new System.Drawing.Point(639, 52);
-            this.Light.Name = "Light";
-            this.Light.Size = new System.Drawing.Size(38, 23);
-            this.Light.TabIndex = 17;
-            this.Light.Text = "Light";
-            this.Light.UseSelectable = true;
-            this.Light.Click += new System.EventHandler(this.Light_Click);
-            // 
-            // Dark
-            // 
-            this.Dark.Location = new System.Drawing.Point(678, 52);
-            this.Dark.Name = "Dark";
-            this.Dark.Size = new System.Drawing.Size(39, 23);
-            this.Dark.TabIndex = 17;
-            this.Dark.Text = "Dark";
-            this.Dark.UseSelectable = true;
-            this.Dark.Click += new System.EventHandler(this.Dark_Click);
+            this.ThemeBtn.Location = new System.Drawing.Point(639, 52);
+            this.ThemeBtn.Name = "ThemeBtn";
+            this.ThemeBtn.Size = new System.Drawing.Size(88, 23);
+            this.ThemeBtn.TabIndex = 17;
+            this.ThemeBtn.Text = "Light";
+            this.ThemeBtn.Click += new System.EventHandler(this.Theme_Click);
             // 
             // metroButton2
             // 
@@ -403,8 +390,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 402);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.Dark);
-            this.Controls.Add(this.Light);
+            this.Controls.Add(this.ThemeBtn);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.webtitle);
             this.Controls.Add(this.address);
@@ -426,11 +412,9 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "MiniPress by FeelingX";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -452,8 +436,7 @@
         private MetroFramework.Controls.MetroTextBox webtitle;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private MetroFramework.Controls.MetroButton Dark;
-        private MetroFramework.Controls.MetroButton Light;
+        private MetroFramework.Controls.MetroButton ThemeBtn;
         private MetroFramework.Controls.MetroButton metroButton2;
     }
 }

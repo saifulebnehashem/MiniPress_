@@ -19,15 +19,9 @@ namespace MiniPress_
         public MiniPress()
         {
             InitializeComponent();
+            StyleManager = metroStyleManager1;
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.StyleManager = metroStyleManager1;
-        }
-        private void metroLabel2_Click(object sender, EventArgs e)
-        {
 
-        }
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
@@ -39,14 +33,12 @@ namespace MiniPress_
             File.Copy(dialog.FileName, Path.Combine("htdoc", "img", Path.GetFileName(dialog.FileName)));
         }
 
-        private void Light_Click(object sender, EventArgs e)
+        private void Theme_Click(object sender, EventArgs e)
         {
-            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
-        }
-
-        private void Dark_Click(object sender, EventArgs e)
-        {
-            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            StyleManager.Theme = (StyleManager.Theme == MetroFramework.MetroThemeStyle.Light) ?
+                MetroFramework.MetroThemeStyle.Dark : MetroFramework.MetroThemeStyle.Light;
+            ThemeBtn.Text = (StyleManager.Theme == MetroFramework.MetroThemeStyle.Light) ?
+                "Dark" : "Light";
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
