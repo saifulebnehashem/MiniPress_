@@ -14,7 +14,7 @@ namespace MiniPress_
 {
     public partial class MiniPress : MetroFramework.Forms.MetroForm
     {
-        String name;
+        string fileName;
 
         public MiniPress()
         {
@@ -31,8 +31,11 @@ namespace MiniPress_
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
-            dialog.ShowDialog();
-            String name = Path.GetFileName(dialog.FileName);
+            if (dialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            fileName = Path.GetFileName(dialog.FileName);
+            Directory.CreateDirectory(Path.Combine("htdoc", "img"));
             File.Copy(dialog.FileName, Path.Combine("htdoc", "img", Path.GetFileName(dialog.FileName)));
         }
 
@@ -48,7 +51,7 @@ namespace MiniPress_
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hi Your File Name is " + name);
+            MessageBox.Show($"Hi Your File Name is {fileName}");
         }
     }
 }
