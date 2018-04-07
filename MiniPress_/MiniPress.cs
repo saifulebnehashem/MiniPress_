@@ -30,7 +30,7 @@ namespace MiniPress_
 
             fileName = Path.GetFileName(dialog.FileName);
             Directory.CreateDirectory(Path.Combine("htdoc", "img"));
-            File.Copy(dialog.FileName, Path.Combine("htdoc", "img", Path.GetFileName(dialog.FileName)));
+            File.Copy(dialog.FileName, Path.Combine("htdoc", "img", Path.GetFileName(dialog.FileName)),true);
         }
 
         private void Theme_Click(object sender, EventArgs e)
